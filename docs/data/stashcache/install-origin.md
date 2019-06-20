@@ -101,6 +101,9 @@ With this configuration, the data under `/mnt/stash/hcc/bio/datasets` would be a
     Directories you export **must not** collide with directories provided by other origin servers; this is
     why the explicit registration is required.
 
+!!! warning
+    The origin can only export one directory level below the `rootdir`,
+    so exporting `/hcc` would work, but exporting `/hcc/data1` would not work.
 
 Managing the Origin Service
 ---------------------------
