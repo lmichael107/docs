@@ -1,7 +1,7 @@
-OSG Data Release 3.4.44-2
-=========================
+OSG Software Release 3.4.49
+===========================
 
-**Release Date:** 2020-03-04    
+**Release Date**: 2020-04-08    
 **Supported OS Versions:** EL7, EL6
 
 !!!warning "OSG 3.4 End-of-Life Approaching"
@@ -15,21 +15,23 @@ OSG Data Release 3.4.44-2
 Summary of changes
 ------------------
 
-This release contains [VO Package v100](https://github.com/opensciencegrid/osg-vo-config/releases/tag/release-100):
+This release contains:
 
-- Add new cert for GLOW (SOFTWARE-4006)
-- Replace one of the certs for OSG (SOFTWARE-4007)
-- Update voms2.fnal.gov DN for DES, DUNE, Fermilab (SOFTWARE-4012)
-- Map FQANs from Fermilab VO subgroups to the same user as the VO-wide target (SOFTWARE-4005)
-- Drop CDF (SOFTWARE-4012)
-- Drop MIS VO (SOFTWARE-3575)
+-   [Frontier Squid 4.10.3](http://frontier.cern.ch/dist/frontier-squid-releasenotes.txt): Bug fix for negative caching
+-   [VO Package v103](https://github.com/opensciencegrid/osg-vo-config/releases/tag/release-102)
+    -   Added WLCG VOMS
+    -   Updated certificate for voms1.fnal.gov
 
-These [JIRA tickets](https://opensciencegrid.atlassian.net/issues/?jql=project%20%3D%20SOFTWARE%20AND%20fixVersion%20%3D%203.4.44-2%20ORDER%20BY%20priority%20DESC%2C%20key%20DESC) were addressed in this release.
+These [JIRA tickets](https://jira.opensciencegrid.org/issues/?jql=project%20%3D%20SOFTWARE%20AND%20fixVersion%20%3D%203.4.49%20ORDER%20BY%20priority%20DESC%2C%20key%20DESC) were addressed in this release.
 
-Containers
-----------
+Notes
+-----
 
-The [Worker node containers](/worker-node/using-wn-containers/) have been updated to this release.
+This section describes important upgrade notes and/or caveats for packages available in the OSG release repositories.
+Detailed changes are below. All of the documentation can be found [here](/index.md).
+
+-   OSG 3.4 contains only 64-bit components.
+-   The StashCache service is only supported on EL7
 
 Updating to the new release
 ---------------------------
@@ -64,32 +66,42 @@ We added or updated the following packages to the production OSG yum repository.
 
 #### Enterprise Linux 6
 
--   [vo-client-100-1.osg34.el6](https://koji.chtc.wisc.edu/koji/search?match=glob&type=build&terms=vo-client-100-1.osg34.el6)
+-   [frontier-squid-4.10-3.1.osg34.el6](https://koji.chtc.wisc.edu/koji/search?match=glob&type=build&terms=frontier-squid-4.10-3.1.osg34.el6)
+-   [osg-version-3.4.49-1.osg34.el6](https://koji.chtc.wisc.edu/koji/search?match=glob&type=build&terms=osg-version-3.4.49-1.osg34.el6)
+-   [vo-client-103-1.osg34.el6](https://koji.chtc.wisc.edu/koji/search?match=glob&type=build&terms=vo-client-103-1.osg34.el6)
 
 #### Enterprise Linux 7
 
--   [vo-client-100-1.osg34.el7](https://koji.chtc.wisc.edu/koji/search?match=glob&type=build&terms=vo-client-100-1.osg34.el7)
+-   [frontier-squid-4.10-3.1.osg34.el7](https://koji.chtc.wisc.edu/koji/search?match=glob&type=build&terms=frontier-squid-4.10-3.1.osg34.el7)
+-   [osg-version-3.4.49-1.osg34.el7](https://koji.chtc.wisc.edu/koji/search?match=glob&type=build&terms=osg-version-3.4.49-1.osg34.el7)
+-   [vo-client-103-1.osg34.el7](https://koji.chtc.wisc.edu/koji/search?match=glob&type=build&terms=vo-client-103-1.osg34.el7)
 
 ### RPMs
 
 If you wish to manually update your system, you can run yum update against the following packages:
 
-    vo-client vo-client-dcache vo-client-lcmaps-voms
+    frontier-squid frontier-squid-debuginfo osg-version vo-client vo-client-dcache vo-client-lcmaps-voms
 
 If you wish to only update the RPMs that changed, the set of RPMs is:
 
 #### Enterprise Linux 6
 
 ``` file
-vo-client-100-1.osg34.el6
-vo-client-dcache-100-1.osg34.el6
-vo-client-lcmaps-voms-100-1.osg34.el6
+frontier-squid-4.10-3.1.osg34.el6
+frontier-squid-debuginfo-4.10-3.1.osg34.el6
+osg-version-3.4.49-1.osg34.el6
+vo-client-103-1.osg34.el6
+vo-client-dcache-103-1.osg34.el6
+vo-client-lcmaps-voms-103-1.osg34.el6
 ```
 
 #### Enterprise Linux 7
 
 ``` file
-vo-client-100-1.osg34.el7
-vo-client-dcache-100-1.osg34.el7
-vo-client-lcmaps-voms-100-1.osg34.el7
+frontier-squid-4.10-3.1.osg34.el7
+frontier-squid-debuginfo-4.10-3.1.osg34.el7
+osg-version-3.4.49-1.osg34.el7
+vo-client-103-1.osg34.el7
+vo-client-dcache-103-1.osg34.el7
+vo-client-lcmaps-voms-103-1.osg34.el7
 ```
